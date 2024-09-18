@@ -1,4 +1,7 @@
-<?php 	require_once 'config.php';
+<?php 
+echo "test";	
+exit();
+require_once 'config.php';
 
 
 	$ary_banner = $obj_banner->fetchAll_join('*' , " order by sort DESC ");
@@ -10,7 +13,7 @@
 			$htmlBanner .= '<div class="item '.$dotActive.'"><a class="fill" href="'.$value['url'].'" target="_blank"><img src="uploads/'.$value['pic'].'" class="img-responsive" /></a></div>';
 			$htmlBannerDot .= '<li data-target="#myCarousel" data-slide-to="'.$dotCount.'" class="'.$dotActive.'"></li>';
 			$dotCount++;
-		}else if($value['type'] == '2'){
+		}else if($value['type'] == '2'){ 
 			$htmlAD .= '<a href="'.$value['url'].'"><div class="img-block"><img src="uploads/'.$value['pic'].'" class="img-responsive"/></div></a>';
 		}
 	}

@@ -51,7 +51,7 @@ include "include/menu.php";
 									<thead>
 										<tr>
 											<th></th>
-											<th>寬:1207px / 高411px</th>
+											<th>寬:1200px / 高300px</th>
 											<th></th>
 											<th width="150px"></th>
 										</tr>

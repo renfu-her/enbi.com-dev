@@ -10,6 +10,10 @@
 		$htmlMenuClass4 = 'active';
 	}else if(strpos($_SERVER['REQUEST_URI'],'service.php') || strpos($_SERVER['REQUEST_URI'],'clean.php') ){
 		$htmlMenuClass5 = 'active';
+	}else if(strpos($_SERVER['REQUEST_URI'],'unboxing.php') || strpos($_SERVER['REQUEST_URI'],'unboxing-content.php') ){
+		$htmlMenuClass6 = 'active';
+	}else if(strpos($_SERVER['REQUEST_URI'],'contact_us.php')){
+		$htmlMenuClass7 = 'active';
 	}
 
 	if(strpos($_SERVER['REQUEST_URI'],'index.php') || !strpos($_SERVER['REQUEST_URI'],'.php') ){
@@ -67,7 +71,7 @@
 
 
 
-					<li class="m-none  <?php echo $htmlMenuClass1?>" >
+					<!--<li class="m-none  <?php echo $htmlMenuClass1?>" >
 						<a href="story.php">品牌故事</a>
 					</li>
 					<li class="d-none m-block">
@@ -76,9 +80,9 @@
 							<li><a href="story.php">品牌故事</a></li>
 							<li><a href="agent.php">代理品牌</a></li>
 						</ul>
-					</li>
+					</li>-->
 					<li <?php echo $htmlMenuClass2?>>
-						<a href="news.php">活動訊息</a>
+						<a href="news.php">活動快訊</a>
 					</li>
 					<li class="m-none <?php echo $htmlMenuClass3?>">
 						<a href="products.php">商品專區</a>
@@ -105,7 +109,11 @@
 							?>
 						</ul>
 					</li>
-					<li class="m-none <?php echo $htmlMenuClass5?>">
+					<li  class="<?php echo $htmlMenuClass6?>">
+                        <a href="unboxing.php">開箱特輯</a>
+                    </li>
+                    
+					<!--<li class="m-none <?php echo $htmlMenuClass5?>">
 						<a href="service.php">專屬服務</a>
 					</li>
 					<li class="d-none m-block">
@@ -114,12 +122,12 @@
 							<li><a href="service.php">客製化刺繡</a></li>
 							<li><a href="clean.php">到府除塵蟎</a></li>
 						</ul>
-					</li>
+					</li>-->
 					<li class="m-none <?php echo $htmlMenuClass4?>">
-						<a href="stores.php">門市資訊</a>
+						<a href="stores.php">經銷據點</a>
 					</li>
 					<li class="d-none m-block">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">門市資訊 <span class="caret"></span></a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">經銷據點 <span class="caret"></span></a>
 						<ul class="dropdown-menu multi-level">
 							<li><a href="storelist.php?a=1">北區</a></li>
 							<li><a href="storelist.php?a=2">中區</a></li>
@@ -127,7 +135,9 @@
 						</ul>
 					</li>
 
-
+					<li  class="<?php echo $htmlMenuClass7?>">
+                        <a href="contact_us.php">合作洽談</a>
+                    </li>
 
 
 
@@ -140,7 +150,7 @@
 				<div class="col-md-3 col-sm-12 col-xs-12  pull-right">
 					<form class="navbar-form" role="search" action="search.php">
 						<div class="input-group">
-							<input name="s" type="text" class="form-control search-form" placeholder="搜尋">
+							<input name="s" type="text" class="form-control search-form" placeholder="搜尋" style="color: #666">
 							<div class="input-group-btn">
 								<button class="btn btn-default search-btn" type="submit"><i class="glyphicon glyphicon-search"></i></button>
 							</div>

@@ -90,7 +90,7 @@
 						<div class="col-md-12">
 							<h2 class="prod-header"><?php echo $ary_data['title']?></h2>
 						</div>
-						<div class="col-md-12 editorImg">
+						<div class="col-md-12 editorImg" >
 							<?php echo $ary_data['info']?>
 						</div>
 					</div>
@@ -117,7 +117,7 @@
 			<hr>
 		
 			<!-- Footer -->
-			<footer>
+			<footer class="footer-row">
 				<?php include icld.'footer.php'; ?>
 			</footer>
 

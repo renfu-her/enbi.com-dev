@@ -96,14 +96,7 @@
 											</div>
 										</div>
 										<div class="col-md-6 col-sm-12 col-xs-12 plr-10">
-											<div class="map-block">
-												<?php 													if($value['addr']){
-												?>
-												<iframe src="https://www.google.com/maps/embed/v1/place?q=<?php echo $value['addr']?>&key=AIzaSyAG6cLmDhRV4f7XnnEY6g5yfnebkfv7Wb8" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>	
-												<?		
-													}
-												?>
-											</div>
+											
 										</div>
 									</div>
 								</div>	
@@ -152,7 +145,7 @@
 			<hr>
 		
 			<!-- Footer -->
-			<footer>
+			<footer class="footer-row">
 				<?php include icld.'footer.php'; ?>
 			</footer>
 

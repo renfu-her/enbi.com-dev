@@ -122,8 +122,31 @@ if($_SESSION['AdminLogin'] != true ){
     case '19':
     include ("ind_19.php");
     break;
+		  
+	case 'test':
+    include ("ind_test.php");
+    break;
 
+	case 'ind_mail':
+    include ("ind_mail.php");
+    break;
+		  
+	case 'ind_unboxing':
+    include ("ind_unboxing.php");
+    break;
+		  
+	case 'ind_banner':
+    include ("ind_banner.php");
+    break;
+		  
+		  
+		  case 'ind_mail_print':
+    include ("ind_mail_print.php");
+    break;
+		  
     
+		  
+			  
     default:
 ?>
     <script type="text/javascript">

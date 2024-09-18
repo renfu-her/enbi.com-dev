@@ -64,7 +64,7 @@ a, a:hover, a:focus {
 .navbar-inverse .navbar-nav>.active>a:focus,
 .navbar-inverse .navbar-nav>.active>a:hover {
     color: #fff;
-    background-color: #ab9bcc;
+    background-color: 9fa0a0;
 }
 
 .navbar .navbar-collapse .navbar-form {
@@ -113,7 +113,7 @@ header.carousel {
 .carousel-indicators li.active {
 	width: 20px;
 	height: 20px;
-	background-color: #ab9bcc;
+	background-color: 9fa0a0;
 	border: 1px solid #ab9bcc;
 	margin: 0px 8px;
 }
@@ -225,7 +225,7 @@ a .caption .decro-line {
 .sub-page .navbar-inverse .navbar-nav>.active>a:focus,
 .sub-page .navbar-inverse .navbar-nav>.active>a:hover {
     color: #fff;
-    background-color: #ab9bcc;
+    background-color: 9fa0a0;
 }
 .sub-page .search-form {
     color: white;
@@ -482,7 +482,7 @@ a .caption .decro-line {
 	background-color: #8972b6;
 }
 .btn-send:hover {
-	background-color: #ab9bcc;
+	background-color: 9fa0a0;
 	color: white;
 }
 .btn-reset {
@@ -652,7 +652,7 @@ footer {
 	}
   
 	.navbar-inverse {
-		background-color: #ab9bcc;
+		background-color: 9fa0a0;
 	}
 	.navbar-inverse .navbar-toggle:focus, 
 	.navbar-inverse .navbar-toggle:hover {
@@ -660,7 +660,7 @@ footer {
 	}
 	.navbar-inverse .navbar-toggle:focus .icon-bar, 
 	.navbar-inverse .navbar-toggle:hover .icon-bar {
-		background-color: #ab9bcc;
+		background-color: 9fa0a0;
 	}
 	.navbar-inverse .navbar-nav>li>a {
 		padding: 12px 30px;

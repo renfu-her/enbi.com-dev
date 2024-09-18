@@ -1,4 +1,5 @@
-<?php 
+<?php 	
+include "./admin1561318/common.func.php";
 require_once 'config.php';
 
 
@@ -11,7 +12,7 @@ require_once 'config.php';
 			$htmlBanner .= '<div class="item '.$dotActive.'"><a class="fill" href="'.$value['url'].'" target="_blank"><img src="uploads/'.$value['pic'].'" class="img-responsive" /></a></div>';
 			$htmlBannerDot .= '<li data-target="#myCarousel" data-slide-to="'.$dotCount.'" class="'.$dotActive.'"></li>';
 			$dotCount++;
-		}else if($value['type'] == '2'){ 
+		}else if($value['type'] == '2'){
 			$htmlAD .= '<a href="'.$value['url'].'"><div class="img-block"><img src="uploads/'.$value['pic'].'" class="img-responsive"/></div></a>';
 		}
 	}
@@ -26,19 +27,22 @@ require_once 'config.php';
 <head>
 
 	<?php include icld.'head.php'; ?>
-
+<style>
+	.sub-page .nav.navbar-nav li a {
+    color: #fff; 
+}
+</style>
 </head>
 
-<body class="homepage">
+<body class="sub-page">
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-bg navbar-static-top" role="navigation">
+        <nav class="navbar navbar-inverse navbar-bg navbar-static-top" role="navigation">
 
 		<?php include icld.'nav.php'; ?>
 
     </nav>
-
-    <!-- Header Carousel -->
+	
+	<!-- Header Carousel -->
     <header id="myCarousel" class="carousel slide carousel-fullscreen carousel-fade" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
@@ -59,18 +63,24 @@ require_once 'config.php';
         </a>
     </header>
 	
-	<section class="s1">
+	
+	<section class="s1 py-6">
 		<!-- Page Content -->
 		<div class="container">
 
 			<!-- Feature Section -->
-			<div class="row">
+			<div class="row"> <!-- 20181111 edited /// remove h640 ///  -->
 				<div class="col-lg-12 text-center">
-					<h2 class="page-header">
-						<span class="under-decor">Our Features</span>
+					<h2 class="page-title">
+						<span class="pr-2">舒適生活</span> <span>平價時尚</span> <!-- 20181111 edited /// 中翻英 ///  -->
 					</h2>
+					<h3 class="page-subtitle">Comfortable Life, Cheap Fashion</h3>
+					<p>
+						您挑選最舒適的睡眠伴侶，透過視覺美學，生活習慣，打造不同主題環境的書是睡眠空間<br>
+						我們將多年成功經驗最安心的品質提供最平實的價格
+					</p>
 				</div>
-				<div class="col-md-2 col-sm-4 col-xs-4" data-aos="zoom-in" data-aos-duration="100">
+				<div class="col-md-2 col-sm-4 col-xs-4" data-aos="zoom-in" data-aos-duration="100"> <!-- 20181111 edited /// col-md-2 col-sm-6 col-xs-6 change to col-md-2 col-sm-4 col-xs-4 ///  -->
 					<div class="text-center icon-wrap icon-effect icon-effect-a">
 						<div class="thumbnail hi-icon">
 							<img src="images/f1.png" class="img-responsive" />
@@ -80,7 +90,7 @@ require_once 'config.php';
 						</div>
 					</div>
 				</div>
-				<div class="col-md-2 col-sm-4 col-xs-4" data-aos="zoom-in" data-aos-delay="150" data-aos-duration="350">
+				<div class="col-md-2 col-sm-4 col-xs-4" data-aos="zoom-in" data-aos-delay="150" data-aos-duration="350"> <!-- 20181111 edited /// col-md-2 col-sm-6 col-xs-6 change to col-md-2 col-sm-4 col-xs-4 ///  -->
 					<div class="text-center icon-wrap icon-effect icon-effect-a">
 						<div class="thumbnail hi-icon">
 							<img src="images/f2.png" class="img-responsive" />
@@ -90,7 +100,7 @@ require_once 'config.php';
 						</div>
 					</div>
 				</div>
-				<div class="col-md-2 col-sm-4 col-xs-4" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="500">
+				<div class="col-md-2 col-sm-4 col-xs-4" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="500"> <!-- 20181111 edited /// col-md-2 col-sm-6 col-xs-6 change to col-md-2 col-sm-4 col-xs-4 ///  -->
 					<div class="text-center icon-wrap icon-effect icon-effect-a">
 						<div class="thumbnail hi-icon">
 							<img src="images/f3.png" class="img-responsive" />
@@ -100,7 +110,7 @@ require_once 'config.php';
 						</div>
 					</div>
 				</div>
-				<div class="col-md-2 col-sm-4 col-xs-4" data-aos="zoom-in" data-aos-delay="450" data-aos-duration="650">
+				<div class="col-md-2 col-sm-4 col-xs-4" data-aos="zoom-in" data-aos-delay="450" data-aos-duration="650"> <!-- 20181111 edited /// col-md-2 col-sm-6 col-xs-6 change to col-md-2 col-sm-4 col-xs-4 ///  -->
 					<div class="text-center icon-wrap icon-effect icon-effect-a">
 						<div class="thumbnail hi-icon">
 							<img src="images/f4.png" class="img-responsive" />
@@ -110,7 +120,7 @@ require_once 'config.php';
 						</div>
 					</div>
 				</div>
-				<div class="col-md-2 col-sm-4 col-xs-4" data-aos="zoom-in" data-aos-delay="600" data-aos-duration="800">
+				<div class="col-md-2 col-sm-4 col-xs-4" data-aos="zoom-in" data-aos-delay="600" data-aos-duration="800"> <!-- 20181111 edited /// col-md-2 col-sm-6 col-xs-6 change to col-md-2 col-sm-4 col-xs-4 ///  -->
 					<div class="text-center icon-wrap icon-effect icon-effect-a">
 						<div class="thumbnail hi-icon">
 							<img src="images/f5.png" class="img-responsive" />
@@ -120,7 +130,7 @@ require_once 'config.php';
 						</div>
 					</div>
 				</div>
-				<div class="col-md-2 col-sm-4 col-xs-4" data-aos="zoom-in" data-aos-delay="750" data-aos-duration="950">
+				<div class="col-md-2 col-sm-4 col-xs-4" data-aos="zoom-in" data-aos-delay="750" data-aos-duration="950"> <!-- 20181111 edited /// col-md-2 col-sm-6 col-xs-6 change to col-md-2 col-sm-4 col-xs-4 ///  -->
 					<div class="text-center icon-wrap icon-effect icon-effect-a">
 						<div class="thumbnail hi-icon">
 							<img src="images/f6.png" class="img-responsive" />
@@ -133,26 +143,29 @@ require_once 'config.php';
 				
 			</div>
 			<!-- /.row -->
-
+		</div>
+	</section>
+		
 			<!-- New Item Section -->
-			<div class="row">
+			<section class="sec-product">
+			<div class="container">
+			<div class="row m-mt-15"><!-- 20181111 edited /// remove h560 /// -->
 				<div class="col-lg-12 text-center">
-					<h2 class="page-header ptb-20">
-						<span class="under-decor">New Products</span>
-					</h2>
+					<h2 class="sec-title">最新商品</h2>
+					<h6 class="sec-subtitle">New Products</h6>
 				</div>
 				<?php 					$divDuration = 1000;
 					$divDataaosdelay = 0;
 					foreach($ary_prod as $key => $value){
 				?>
-				<div class="col-md-3 col-sm-3 col-xs-6 plr-0" data-aos="fade-right" data-aos-delay="<?php echo $divDataaosdelay?>" data-aos-duration="<?php echo $divDuration?>">
+				<div class="col-md-3 col-sm-3 col-xs-6 mb-15 px-1" data-aos="fade-right" data-aos-delay="<?php echo $divDataaosdelay?>" data-aos-duration="<?php echo $divDuration?>">
 					<a href="products-content.php?p=<?php echo $value['pkey']?>">
-						<div class="icon-wrap icon-effect icon-effect-a">
+						<div class="cards icon-wrap icon-effect icon-effect-a">
 							<div class="thumbnail">
 								<img class="img-responsive img-hover" src="uploads/<?php echo $value['pic']?>" alt="">
 							</div>
 							<div class="caption">
-								<p class="decro-line"><?php echo cut_content($value['title'],16)?></p>
+								<p><?php echo cut_content($value['title'],16)?></p>
 							</div>
 						</div>
 					</a>
@@ -161,126 +174,210 @@ require_once 'config.php';
 						$divDataaosdelay += 150;
 					}
 				?>
+			
 			</div>
-			<!-- /.row -->
+			
+			
+<?PHP
+$banner_o=0;
+$sql_banner="
+SELECT * FROM news 
+ORDER BY `news_sort` ASC ,`news_no` DESC 
+LIMIT 0 , 3
+";//DESC是遞減
+$result_banner = $db->prepare("$sql_banner");//防sql注入攻擊
+$result_banner->execute();
+$total_banner=$result_banner->rowCount();//算出總筆數
+//列出內容
+if($total_banner<>0){//如果判斷結果有值才跑回圈抓資?>			
+			<div class="row unboxing-row py-5" data-aos="zoom-in" data-aos-duration="500">
+				<div id="carousel-unboxing" class="carousel carousel-moveone slide" data-ride="carousel">
+            
+					<div class="col-md-2 col-xs-12">
+						<h2 class="sec-title">網紅開箱</h2>
+						<h6 class="sec-subtitle">Unboxing Share</h6>
+						<ol class="carousel-indicators">
+							
+<?PHP 
 
-			<!-- Slogan Section -->
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="slogan-block">
-						<h2 class="text-center" data-aos="zoom-in" data-aos-duration="800">Sleeping In The Healing Night</h2>
-						<h3 class="text-center" data-aos="fade-right" data-aos-delay="150" >
-							After work in the evening, unloading the exhaustion <br/>
-							Hug in midsummer, sleep in the quiet moonlight
-						</h3>
+   while($rows_banner = $result_banner->fetch(PDO::FETCH_ASSOC))
+{ 
+?>
+    <li data-target="#carousel-unboxing" data-slide-to="<?=$banner_o?>" <?PHP if($banner_o==0) echo 'class="active"';?>></li>
+ <?PHP
+$banner_o=$banner_o+1;//判斷第一次要給li style值
+}
+?>  
+						</ol>	
+					</div>
+					<div class="col-md-10 col-xs-12">
+						<div class="carousel-inner">
+<?PHP 
+$banner_o=0;
+$sql_banner="
+SELECT * FROM news 
+ORDER BY `news_sort` ASC ,`news_no` DESC 
+LIMIT 0 ,10
+";//DESC是遞減
+$result_banner = $db->prepare("$sql_banner");//防sql注入攻擊
+$result_banner->execute();
+$total_banner=$result_banner->rowCount();//算出總筆數
+//列出內容
+if($total_banner<>0){//如果判斷結果有值才跑回圈抓資
+   while($rows_banner = $result_banner->fetch(PDO::FETCH_ASSOC))
+{ 
+$banner_o=$banner_o+1;//判斷第一次要給li style值
+?>  
+							<div class="item  <?PHP if($banner_o==1) echo 'active';?>">
+								<div class="col-xs-12 col-md-4">
+									<div class="image-block">
+										<a href="unboxing-content.php?no=<?=$rows_banner["news_no"]; ?>"><img src="./admin1561318/goods_pic/<?=$rows_banner["news_pic_b"]; ?>"/ class="img-responsive"></a>
+									</div>
+									<div class="block-text">
+										<a href="unboxing-content.php?no=<?=$rows_banner["news_no"]; ?>">
+											<h4><?=$rows_banner["news_title"]; ?></h4>
+											
+											<p  style=" display: -webkit-box;
+					  -webkit-line-clamp: 2; /* 最大顯示行數 */
+					  -webkit-box-orient: vertical;
+					  overflow: hidden;
+					  text-overflow: ellipsis; /* 使用省略號 */"><?=$rows_banner["news_title_en"]; ?></p>
+										</a>
+									</div>
+								</div>
+							</div>
+<?PHP
+}}
+?> 	
+										
+						</div>
+						<a class="left carousel-control" href="#carousel-unboxing" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+						<a class="right carousel-control" href="#carousel-unboxing" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
 					</div>
 				</div>
 			</div>
-			<!-- /.row -->
-			
-			<!-- Sale Section -->
-			<div class="row">
-				<div class="col-lg-12 p4">
-					<?php echo $htmlAD?>
-				</div>
+
+<?PHP
+}
+?>			
+						
+									
+															
 			</div>
-			<!-- /.row -->
-			
-			<!-- New Item Section -->
-			<div class="row">
-				<div class="col-md-3 col-sm-3 col-xs-6 plr-0" data-aos="fade-right" data-aos-duration="1000">
-					<a href="/products.php?c=55">
-						<div class="icon-wrap icon-effect icon-effect-a">
-							<div class="thumbnail">
-								<img class="img-responsive img-hover" src="images/item01.png" alt="">
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-3 col-sm-3 col-xs-6 plr-0" data-aos="fade-right" data-aos-delay="150" data-aos-duration="1150">
-					<a href="/products.php?c=51">
-						<div class="icon-wrap icon-effect icon-effect-a">
-							<div class="thumbnail">
-								<img class="img-responsive img-hover" src="images/item02.png" alt="">
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-3 col-sm-3 col-xs-6 plr-0" data-aos="fade-right" data-aos-delay="300" data-aos-duration="1300">
-					<a href="/products.php?c=53">
-						<div class="icon-wrap icon-effect icon-effect-a">
-							<div class="thumbnail">
-								<img class="img-responsive img-hover" src="images/item03.png" alt="">
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-3 col-sm-3 col-xs-6 plr-0" data-aos="fade-right" data-aos-delay="450" data-aos-duration="1450">
-					<a href="/products.php?c=60">
-						<div class="icon-wrap icon-effect icon-effect-a">
-							<div class="thumbnail">
-								<img class="img-responsive img-hover" src="images/item04.png" alt="">
-							</div>
-						</div>
-					</a>
-				</div>
-			</div>
-			<!-- /.row -->
-			
-			<!-- Brand Story Section -->
-			<div class="row">
-				<div class="col-lg-12 plr-0">
-					<a href="#">
-						<div class="img-block">
-							<img src="images/brand-story.png" class="img-responsive"/>
-						</div>
-					</a>
-				</div>
-			</div>
+			</section>
 			<!-- /.row -->
 
-			<!-- Footer Info Section -->
+		<section class="py-5">
+		<div class="container">			
+							
+			<!-- Slogan Section -->
+		<section>	
+		 <!--banner-->
+<?PHP
+$banner_o=0;
+$sql_banner="
+SELECT * FROM banner 
+ORDER BY `banner_sort` ASC ,`banner_no` DESC 
+LIMIT 0 , 100
+";//DESC是遞減
+$result_banner = $db->prepare("$sql_banner");//防sql注入攻擊
+$result_banner->execute();
+$total_banner=$result_banner->rowCount();//算出總筆數
+//列出內容
+if($total_banner<>0){//如果判斷結果有值才跑回圈抓資?>		
+		<div id="myCarousel2" class="carousel slide  carousel-fade mb-15" data-ride="carousel" >
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+           
+          <?PHP 
+
+   while($rows_banner = $result_banner->fetch(PDO::FETCH_ASSOC))
+{ 
+?>
+    <li data-target="#myCarousel2" data-slide-to="<?=$banner_o?>" <?PHP if($banner_o==0) echo 'class="active"';?>></li>
+ <?PHP
+$banner_o=$banner_o+1;//判斷第一次要給li style值
+}
+?> 
+        </ol>
+		
+		<!-- 20191228 又改回原來樣式 /// rewrited start here ///  -->
+		<!-- 20181111 edited /// rewrited start here ///  -->
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <?PHP 
+$banner_o=0;
+$sql_banner="
+SELECT * FROM banner 
+ORDER BY `banner_sort` ASC ,`banner_no` DESC 
+LIMIT 0 , 100
+";//DESC是遞減
+$result_banner = $db->prepare("$sql_banner");//防sql注入攻擊
+$result_banner->execute();
+$total_banner=$result_banner->rowCount();//算出總筆數
+//列出內容
+if($total_banner<>0){//如果判斷結果有值才跑回圈抓資
+   while($rows_banner = $result_banner->fetch(PDO::FETCH_ASSOC))
+{ 
+$banner_o=$banner_o+1;//判斷第一次要給li style值
+?> 
+           <div class="item <?PHP if($banner_o==1) echo 'active';?>">
+			   <?PHP if($rows_banner["banner_link"]<>""){ ?>
+			   <a href="<?=$rows_banner["banner_link"]; ?>">
+			   <?PHP } ?>
+			 	  <img src="./admin1561318/goods_pic/<?=$rows_banner["banner_pic_b"]; ?>" alt="<?=$rows_banner["banner_title"]; ?>">
+			   <?PHP if($rows_banner["banner_link"]<>""){ ?>
+			   </a>
+			   <?PHP } ?>
+			</div>
+<?PHP
+}}
+?> 				
+        </div>
+		<!-- 20181111 edited /// rewrited end here ///  -->
+		<!-- 20191228 又改回原來樣式 /// rewrited start here ///  -->
+
+		<!-- Controls -->
+        <a class="left carousel-control" href="#myCarousel2" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel2" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+	</div>
+<?PHP
+}
+?>	
+ <!--banner-->
+			<!-- /.row -->
+	
+			<!-- Sale Section -->
 			<div class="row">
-				<div class="col-md-3 col-sm-3 col-xs-6 plr-0">
-					<a href="https://www.momomall.com.tw/store/Main.jsp?entp_code=102441" target="_blank">
-						<div class="icon-wrap icon-effect icon-effect-a">
-							<div class="thumbnail">
-								<img class="img-responsive img-hover" src="images/footer01.png" alt="">
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-3 col-sm-3 col-xs-6 plr-0">
-					<a href="https://www.facebook.com/ENBI-%E6%81%A9%E6%AF%94-2136359593261410/" target="_blank">
-						<div class="icon-wrap icon-effect icon-effect-a">
-							<div class="thumbnail">
-								<img class="img-responsive img-hover" src="images/footer02.png" alt="">
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-3 col-sm-3 col-xs-6 plr-0">
-					<a href="https://www.facebook.com/enbiliving2018/" target="_blank">
-						<div class="icon-wrap icon-effect icon-effect-a">
-							<div class="thumbnail">
-								<img class="img-responsive img-hover" src="images/footer03.png" alt="">
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-3 col-sm-3 col-xs-6 plr-0">
-					<a href="https://line.me/ti/p/@pnq6802i/" target="_blank">
-						<div class="icon-wrap icon-effect icon-effect-a">
-							<div class="thumbnail">
-								<img class="img-responsive img-hover" src="images/footer04.png" alt="">
-							</div>
+				<div class="col-lg-12"> <!-- 20181111 edited /// add class=> p4 ///  !--> 
+					<a href="#">
+						<div class="img-block">
+							<?php echo $htmlAD?>
 						</div>
 					</a>
 				</div>
 			</div>
 			<!-- /.row -->
+			
 		</div>
 	</section>
+		<aside class="asidebar">
+        <ul class="list-unstyled">
+          <li><a href="https://www.facebook.com/enbiliving2018" target="_blank"><img class="side_ic" src="./images/side_ic01.png" alt="恩比Facebook官方粉絲團"></a></li>
+          <li><a href="tel:02-24321008"><img class="side_ic" src="./images/side_ic02.png" alt="聯絡恩比"></a></li>
+        </ul>
+    </aside>
+			
+			
+	
+
+		
+	
+
 					
 	<section class="footer-sec">
 	<!-- Page Content -->
@@ -288,7 +385,7 @@ require_once 'config.php';
 			<hr>
 		
 			<!-- Footer -->
-			<footer>
+			<footer class="footer-row">
 
 				<?php include icld.'footer.php'; ?>
 
@@ -298,42 +395,60 @@ require_once 'config.php';
 		<!-- /.container -->
 	</section>
 	
-		
     <!-- Script to Activate the Carousel -->
-    <script>
+     <script>
 
 	//add this function start here
-	// var $item = $('.item'); 
-	// var $wHeight = $(window).height();
-	// $item.eq(0).addClass('active');
-	// $item.height($wHeight); 
-	// $item.addClass('full-screen');
+	/*var $item = $('.item'); 
+	var $wHeight = $(window).height();
+	$item.eq(0).addClass('active');
+	$item.height($wHeight); 
+	$item.addClass('full-screen');
 
-	// $('.carousel img').each(function() {
-	// 	var $src = $(this).attr('src');
-	// 	var $color = $(this).attr('data-color');
-	// 	$(this).parent().css({
-	// 		'background-image' : 'url(' + $src + ')',
-	// 		'background-color' : $color
-	// 	});
-	// 	$(this).remove();
-	// });
+	$('.carousel img').each(function() {
+		var $src = $(this).attr('src');
+		var $color = $(this).attr('data-color');
+		$(this).parent().css({
+			'background-image' : 'url(' + $src + ')',
+			'background-color' : $color
+		});
+		$(this).remove();
+	});
 
-	// $(window).on('resize', function (){
-	// 	$wHeight = $(window).height();
-	// 	$item.height($wHeight);
-	// });
+	$(window).on('resize', function (){
+		$wHeight = $(window).height();
+		$item.height($wHeight);
+	});*/
 	//add this function end here
 
 
     $('.carousel').carousel({
-        interval: 5000 //changes the speed
+        interval: 3000 //changes the speed
     })
-	
+
+    
 	AOS.init({
 		easing: 'ease-in-out-sine',
 		// remove once: true,
 	})
+
+	$('.carousel-moveone .item').each(function(){
+		var itemToClone = $(this);
+
+		for (var i=1;i<3;i++) {
+		itemToClone = itemToClone.next();
+
+		// wrap around if at end of item collection
+		if (!itemToClone.length) {
+			itemToClone = $(this).siblings(':first');
+		}
+
+		// grab item, clone, add marker class, add to collection
+		itemToClone.children(':first-child').clone()
+			.addClass("cloneditem-"+(i))
+			.appendTo($(this));
+		}
+	});
 
     </script>
 

@@ -76,7 +76,7 @@
 			<hr>
 		
 			<!-- Footer -->
-			<footer>
+			<footer class="footer-row">
 				<?php include icld.'footer.php'; ?>
 			</footer>
 				

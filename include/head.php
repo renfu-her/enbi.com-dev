@@ -12,7 +12,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 	
     <!-- Custom CSS -->
-    <link href="css/styles20191228.css" rel="stylesheet">
+    <link href="css/styles20230629.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -27,3 +27,12 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+	
+	<!-- Lazy Load Image JavaScript -->
+	<script src="js/lazysizes.min.js" async=""></script>
+	
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5J4SV91WKV"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];  function gtag(){dataLayer.push(arguments);}  gtag('js', new Date());  gtag('config', 'G-5J4SV91WKV');
+</script>

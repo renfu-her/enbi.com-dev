@@ -1,6 +1,4 @@
 <?php 
-echo "test";	
-exit();
 require_once 'config.php';
 
 

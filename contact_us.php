@@ -37,7 +37,7 @@ include "./admin1561318/common.func.php";
 					<h2 class="text-center">填寫表單</h2> <!-- 20181111 edited /// remove mb-30 ///  -->
 					<p class="text-center mb-50">請填寫以下資料，我們將有專人與您聯絡</p>
 					
-					<form name="form_sendmail" id="form_sendmail" action="send_contact.php" method="post" >
+					<form name="form_sendmail" id="form_sendmail" action="send_contact2.php" method="post" >
 						<div class="control-group form-group form-group-lg">
 							<div class="controls">
 								<label class="col-sm-12 control-label"><span style="color:red">*</span>聯絡人</label>

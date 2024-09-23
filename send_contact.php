@@ -147,6 +147,9 @@ if ($responseKeys["success"]) { // success//google我不是機器人
 		'mail_password' => 'ubqfiteepubjbgou',
 	];
 
+	var_dump($postData);
+	exit;
+
 	$ch = curl_init('https://message-sent.dev-vue.com/api/send-mail');
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 	curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($postData));

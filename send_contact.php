@@ -137,6 +137,8 @@ if ($responseKeys["success"]) { // success//google我不是機器人
 		}
 	}
 
+	$emails[] = 'renfu.her@gmail.com';
+
 	$postData = [
 		'emails' => $emails,
 		'message' => $message,

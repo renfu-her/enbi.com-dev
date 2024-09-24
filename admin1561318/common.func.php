@@ -43,7 +43,7 @@ $Day = date("Y-m-d");//今天日期
 define('DB_NAME','enbi');
 define('DB_USER','enbi');
 define('DB_PASSWD','jYr7uSVJQYsb56VeGoix');
-define('DB_HOST','127.0.0.1');
+define('DB_HOST','139.162.5.79');
 define('DB_TYPE','mysql');
 
 

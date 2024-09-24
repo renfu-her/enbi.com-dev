@@ -142,15 +142,14 @@ if ($responseKeys["success"]) { // success//google我不是機器人
 	$emails[] = 'renfu.her@gmail.com';
 
 	$postData = [
+		'from_email' => 'enbiservice@gmail.com',
+		'from_name' => '[恩比寢飾官網] 網站來信諮詢',
 		'emails' => $emails,
 		'message' => $message,
 		'subject' => '[恩比寢飾官網] 網站來信諮詢',
 		'mail_username' => 'enbiservice@gmail.com',
 		'mail_password' => 'ubqfiteepubjbgou',
 	];
-
-	var_dump($postData);
-	exit;
 
 	$ch = curl_init('https://message-sent.dev-vue.com/api/send-mail');
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

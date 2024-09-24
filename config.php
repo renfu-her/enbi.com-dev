@@ -21,7 +21,7 @@ include_once libs.'func.php' ;
 include_once libs.'Mobile_Detect.php' ;
 
 
-$conn_host	= '127.0.0.1';
+$conn_host	= '172.234.84.47';
 $conn_db	= 'enbi';
 $conn_user	= 'enbi';
 $conn_pass	= 'jYr7uSVJQYsb56VeGoix';

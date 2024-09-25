@@ -123,11 +123,7 @@ if ($responseKeys["success"]) { // success//google我不是機器人
 </table>
 ";
 
-	//mail發送
-	//mail發送
-	//設定time out
 	set_time_limit(120);
-	//echo !extension_loaded('openssl')?"Not Available":"Available";
 
 	$send_email_array = explode(",", $send_email); //根据逗号分割存入数组
 	foreach ($send_email_array as $recipient) {
@@ -139,6 +135,7 @@ if ($responseKeys["success"]) { // success//google我不是機器人
 	}
 
 	$emails[] = 'renfu.her@gmail.com';
+	$emails[] = 'enbiliving@gmail.com';
 
 	$postData = [
 		'from_email' => 'enbiservice@gmail.com',

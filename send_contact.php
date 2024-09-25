@@ -3,7 +3,6 @@ if (!isset($_SESSION)) {
 	session_start();
 }
 
-exit;
 echo '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />';
 include "./admin1561318/common.func.php";
 ini_set('display_errors', 1);

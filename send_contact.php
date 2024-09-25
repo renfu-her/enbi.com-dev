@@ -133,8 +133,7 @@ if ($responseKeys["success"]) { // success//google我不是機器人
 			$emails[] = $recipient;
 		}
 	}
-
-	$emails[] = 'renfu.her@gmail.com';
+	
 	$emails[] = 'enbiliving@gmail.com';
 
 	$postData = [

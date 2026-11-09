@@ -1,5 +1,17 @@
 # CHANGED
 
+## 2026-11-09 12:27:31 CST (Asia/Taipei)
+
+Follow-up from front/admin/libs PHP 8.5 inventory agents.
+
+- `storelist.php`: short tags → `<?php`; guard empty area; redirect target `stores.php`.
+- `admin1561318/include/menu.php`: short tags → `<?php if`; isset on `$_GET['ct']` / session.
+- `admin1561318/common.func.php` (+ copy): DSN `charset=utf8` instead of deprecated `PDO::MYSQL_ATTR_INIT_COMMAND`; safer HTTPS/host isset.
+- Upload `*_ok.php` (banner/unboxing add+edit): refuse `imagesx(false)` after failed GD decode; null-safe upload filename.
+- `libs/func.php` `safe()`: recursive for nested arrays / null.
+- Admin login path: isset/`empty` for `AdminLogin`, `logout`, switch `ct`.
+- `send_contact.php`, `unboxing.php`, list pages: null/undefined guards.
+
 ## 2026-11-09 12:25:08 CST (Asia/Taipei)
 
 PHP 7.1 → 8.4/8.5 compatibility bootstrap (poteto figure-it-out Phase C units A–C).

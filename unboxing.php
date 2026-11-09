@@ -65,6 +65,8 @@ include "./admin1561318/common.func.php";
 										?>
 										<?PHP 
 										//列出內容
+										if (!isset($no_id)) { $no_id = 0; }
+										if (!isset($start)) { $start = 0; }
 										$no_id=$no_id+$start+(($page-1)*$pagesize);//流水號
 
 										$sql="

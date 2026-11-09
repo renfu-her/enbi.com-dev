@@ -1,13 +1,19 @@
 <?php
 //如果有開https就自動連上
-if ($_SERVER["HTTPS"] <> "on")
+if (!isset($_SERVER["HTTPS"]) || $_SERVER["HTTPS"] <> "on")
 {
-    $xredir="https://".$_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
-    header("Location: ".$xredir);
+    $serverName = isset($_SERVER["SERVER_NAME"]) ? $_SERVER["SERVER_NAME"] : (isset($_SERVER["HTTP_HOST"]) ? $_SERVER["HTTP_HOST"] : '');
+    $requestUri = isset($_SERVER["REQUEST_URI"]) ? $_SERVER["REQUEST_URI"] : '';
+    if ($serverName !== '') {
+        $xredir="https://".$serverName.$requestUri;
+        header("Location: ".$xredir);
+    }
 }
 //如果有開https就自動連上
 //取得目前網址
-$PAGE_URL='https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+$host = isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : (isset($_SERVER['SERVER_NAME']) ? $_SERVER['SERVER_NAME'] : '');
+$uri = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '';
+$PAGE_URL='https://'.$host.$uri;
 //取得目前網址
 
 
@@ -49,7 +55,7 @@ define('DB_TYPE','mysql');
 
 try {
 	
-	$db = new PDO(DB_TYPE.':host='.DB_HOST.';dbname='.DB_NAME, DB_USER, DB_PASSWD, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES UTF8"));
+	$db = new PDO(DB_TYPE.':host='.DB_HOST.';dbname='.DB_NAME.';charset=utf8', DB_USER, DB_PASSWD);
 	$db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 	//禁用預處理語句的模擬防注入攻擊
 	

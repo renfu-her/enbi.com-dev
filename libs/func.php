@@ -12,12 +12,14 @@ require(libs.'PHPMailerV2/Exception.php');
     
 		if (is_array($content)) {
 			foreach ($content as $key=>$value) {
-				$content[$key] = addslashes(trim((string) $value));
+				$content[$key] = safe($value);
 			}
-		}else{
-			$content = addslashes(trim((string) $content));
+			return $content;
 		}
-		return $content;	
+		if ($content === null) {
+			return '';
+		}
+		return addslashes(trim((string) $content));
 	
   
 	}

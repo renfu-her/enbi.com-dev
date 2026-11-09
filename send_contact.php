@@ -7,21 +7,21 @@ echo '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />';
 include "./admin1561318/common.func.php";
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
-$contact_name 		=	$_POST["contact_name"];
-$contact_email 		=	$_POST["contact_email"];
-$contact_tel 		=	$_POST["contact_tel"];
-$contact_objects	=	$_POST["contact_objects"];
-$contact_message 	=	$_POST["contact_message"];
+$contact_name 		=	isset($_POST["contact_name"]) ? $_POST["contact_name"] : '';
+$contact_email 		=	isset($_POST["contact_email"]) ? $_POST["contact_email"] : '';
+$contact_tel 		=	isset($_POST["contact_tel"]) ? $_POST["contact_tel"] : '';
+$contact_objects	=	isset($_POST["contact_objects"]) ? $_POST["contact_objects"] : '';
+$contact_message 	=	isset($_POST["contact_message"]) ? $_POST["contact_message"] : '';
 
-$contact_company	=	$_POST["contact_company"];
-$contact_address	=	$_POST["contact_address"];
+$contact_company	=	isset($_POST["contact_company"]) ? $_POST["contact_company"] : '';
+$contact_address	=	isset($_POST["contact_address"]) ? $_POST["contact_address"] : '';
 
 //google我不是機器人
-$captcha = $_POST['g-recaptcha-response'];
+$captcha = isset($_POST['g-recaptcha-response']) ? (string)$_POST['g-recaptcha-response'] : '';
 $secretKey = "$google_secretKey";
-$ip = $_SERVER['REMOTE_ADDR'];
+$ip = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '';
 
-$url = 'https://www.google.com/recaptcha/api/siteverify?secret=' . urlencode($secretKey) .  '&response=' . urlencode($captcha);
+$url = 'https://www.google.com/recaptcha/api/siteverify?secret=' . urlencode((string)$secretKey) .  '&response=' . urlencode($captcha);
 $response = file_get_contents($url);
 $responseKeys = json_decode($response, true);
 

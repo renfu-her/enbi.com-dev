@@ -1,6 +1,6 @@
 # scripts
 
-Updated: 2026-11-09 12:25:08 CST (Asia/Taipei)
+Updated: 2026-11-09 12:27:31 CST (Asia/Taipei)
 
 PHP 8.4/8.5 upgrade helpers for the enbi classic PHP site.
 

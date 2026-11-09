@@ -1,7 +1,7 @@
 <?php 	require_once 'config.php';
 
-	if(!$ary_get['a']){
-		header("Location:./store.php");
+	if(empty($ary_get['a'])){
+		header("Location:./stores.php");
 		exit;
 	}
 
@@ -78,9 +78,9 @@
 								<div class="col-md-3 col-sm-12 col-xs-12 pr-10">
 									<div class="store-info-block">
 										<h4><?php echo $value['title']?></h4>
-										<?if($value['addr']){?><p><?php echo $value['addr']?></p><?}?>
-										<?if($value['tel']){?><p>電話 : <?php echo $value['tel']?></p><?}?>
-										<?if($value['fax']){?><p>傳真 : <?php echo $value['fax']?></p><?}?>
+										<?php if($value['addr']){?><p><?php echo $value['addr']?></p><?php }?>
+										<?php if($value['tel']){?><p>電話 : <?php echo $value['tel']?></p><?php }?>
+										<?php if($value['fax']){?><p>傳真 : <?php echo $value['fax']?></p><?php }?>
 									</div>
 								</div>
 								<div class="col-md-9 col-sm-12 col-xs-12">
@@ -90,7 +90,7 @@
 												<?php 													if($value['pic']){
 												?>
 												<img src="uploads/<?php echo $value['pic']?>" class="img-responsive"/>
-												<?		
+												<?php
 													}
 												?>
 											</div>

@@ -40,6 +40,9 @@ if($_FILES['imgfile']['tmp_name']<>"")
 		
 		// 取得上傳圖片
 		$src = imagecreatefromjpeg($_FILES['imgfile']['tmp_name']);
+		if ($src === false) {
+			die('圖片讀取失敗');
+		}
 		
 		// 取得來源圖片長寬
 		$src_w = imagesx($src);
@@ -84,6 +87,9 @@ if($_FILES['imgfile']['tmp_name']<>"")
 	{
 		//獲取源圖gd圖像識別字
 		$srcImg = imagecreatefrompng($_FILES['imgfile']['tmp_name']);
+		if ($srcImg === false) {
+			die('圖片讀取失敗');
+		}
 		
 		// 取得來源小圖片長寬
 		$src_w = imagesx($srcImg);

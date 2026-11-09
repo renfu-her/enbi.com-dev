@@ -49,7 +49,7 @@ define('DB_TYPE','mysql');
 
 try {
 	
-	$db = new PDO(DB_TYPE.':host='.DB_HOST.';dbname='.DB_NAME, DB_USER, DB_PASSWD, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES UTF8"));
+	$db = new PDO(DB_TYPE.':host='.DB_HOST.';dbname='.DB_NAME.';charset=utf8', DB_USER, DB_PASSWD);
 	$db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 	//禁用預處理語句的模擬防注入攻擊
 	

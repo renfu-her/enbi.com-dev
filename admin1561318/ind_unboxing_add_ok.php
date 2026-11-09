@@ -17,8 +17,8 @@ $postwho = $_SERVER['REMOTE_ADDR'];
 
 //圖片上傳判斷JPG還是PNG
 //取副檔名
-$filename=$_FILES['imgfile']['name'];//上傳檔案原始名稱
-$ext = strrchr($filename, "."); //附檔名
+$filename=isset($_FILES['imgfile']['name']) ? (string)$_FILES['imgfile']['name'] : '';//上傳檔案原始名稱
+$ext = ($filename !== '') ? strrchr($filename, ".") : false; //附檔名
 
 //以時間取得時間亂數當成檔名.副檔名
 putenv("TZ=Asia/Taipei");//調整時間為台北時區
@@ -36,6 +36,9 @@ if(($ext=='.jpg')||($ext=='.jpeg')||($ext=='.JPG')||($ext=='.JPEG'))
 		
 	// 取得上傳圖片
 	$src = imagecreatefromjpeg($_FILES['imgfile']['tmp_name']);
+	if ($src === false) {
+		die('圖片讀取失敗');
+	}
 	
 	// 取得來源圖片長寬
 	$src_w = imagesx($src);
@@ -80,6 +83,9 @@ if(($ext=='.png')||($ext=='.PNG'))
 {
 	//獲取源圖gd圖像識別字
 	$srcImg = imagecreatefrompng($_FILES['imgfile']['tmp_name']);
+	if ($srcImg === false) {
+		die('圖片讀取失敗');
+	}
 	
 	// 取得來源小圖片長寬
 	$src_w = imagesx($srcImg);

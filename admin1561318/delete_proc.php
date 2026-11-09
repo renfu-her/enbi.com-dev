@@ -2,7 +2,7 @@
 require_once '../config.php';
 
 
-if($_SESSION['AdminLogin'] != true ){			//登入檢查，include後記得去掉註解
+if(empty($_SESSION['AdminLogin'])){			//登入檢查，include後記得去掉註解
 	header("Location:./index.php");
 	exit;
 }

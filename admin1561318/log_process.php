@@ -3,7 +3,7 @@ include_once("../config.php");
 
 
 	
-if($_GET['logout'] == 1){
+if(isset($_GET['logout']) && $_GET['logout'] == 1){
 
 	unset($_SESSION['AdminLogin']);
 	header("Location:./index.php");

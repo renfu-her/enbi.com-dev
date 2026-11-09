@@ -35,15 +35,15 @@ include "include/head.php";
 </div>
 
 <?php
-if($_SESSION['AdminLogin'] != true ){
+if(empty($_SESSION['AdminLogin'])){
 
   include ("./login.php");
   
-}else if($_SESSION['AdminLogin'] == true ){
+}else{
 
 
 
-  switch($_GET['ct']) {
+  switch(isset($_GET['ct']) ? $_GET['ct'] : '') {
     case '1':
     include ("ind_1.php");
     break;

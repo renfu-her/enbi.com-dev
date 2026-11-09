@@ -1,6 +1,6 @@
 <?php 	
-include "./admin1561318/common.func.php";
 require_once 'config.php';
+include "./admin1561318/common.func.php";
 
 
 	$ary_banner = $obj_banner->fetchAll_join('*' , " order by sort DESC ");

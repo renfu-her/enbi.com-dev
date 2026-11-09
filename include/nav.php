@@ -1,22 +1,31 @@
 <?php 
 
-	if(strpos($_SERVER['REQUEST_URI'],'story.php') || strpos($_SERVER['REQUEST_URI'],'agent.php') ){
+	$htmlMenuClass1 = '';
+	$htmlMenuClass2 = '';
+	$htmlMenuClass3 = '';
+	$htmlMenuClass4 = '';
+	$htmlMenuClass5 = '';
+	$htmlMenuClass6 = '';
+	$htmlMenuClass7 = '';
+
+	$requestUri = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '';
+	if(strpos($requestUri,'story.php') || strpos($requestUri,'agent.php') ){
 		$htmlMenuClass1 = 'active';
-	}else if(strpos($_SERVER['REQUEST_URI'],'news.php') || strpos($_SERVER['REQUEST_URI'],'news-content.php') ){
+	}else if(strpos($requestUri,'news.php') || strpos($requestUri,'news-content.php') ){
 		$htmlMenuClass2 = 'class="active"';
-	}else if(strpos($_SERVER['REQUEST_URI'],'products.php') || strpos($_SERVER['REQUEST_URI'],'products-content.php') ){
+	}else if(strpos($requestUri,'products.php') || strpos($requestUri,'products-content.php') ){
 		$htmlMenuClass3 = 'active';
-	}else if(strpos($_SERVER['REQUEST_URI'],'stores.php') || strpos($_SERVER['REQUEST_URI'],'storelist.php')){
+	}else if(strpos($requestUri,'stores.php') || strpos($requestUri,'storelist.php')){
 		$htmlMenuClass4 = 'active';
-	}else if(strpos($_SERVER['REQUEST_URI'],'service.php') || strpos($_SERVER['REQUEST_URI'],'clean.php') ){
+	}else if(strpos($requestUri,'service.php') || strpos($requestUri,'clean.php') ){
 		$htmlMenuClass5 = 'active';
-	}else if(strpos($_SERVER['REQUEST_URI'],'unboxing.php') || strpos($_SERVER['REQUEST_URI'],'unboxing-content.php') ){
+	}else if(strpos($requestUri,'unboxing.php') || strpos($requestUri,'unboxing-content.php') ){
 		$htmlMenuClass6 = 'active';
-	}else if(strpos($_SERVER['REQUEST_URI'],'contact_us.php')){
+	}else if(strpos($requestUri,'contact_us.php')){
 		$htmlMenuClass7 = 'active';
 	}
 
-	if(strpos($_SERVER['REQUEST_URI'],'index.php') || !strpos($_SERVER['REQUEST_URI'],'.php') ){
+	if(strpos($requestUri,'index.php') || !strpos($requestUri,'.php') ){
 		$htmlLogo = '<a class="navbar-brand" href="index.php"><img src="images/logo.png" class="img-responsive" /> </a>';
 	}else{
 		$htmlLogo = '<a class="navbar-brand" href="index.php"><img src="images/logo-gray.png" class="img-responsive d-show" /><img src="images/logo.png" class="img-responsive m-show" /> </a>';
@@ -24,6 +33,7 @@
 
 
 	$ary_categoryMenu = $obj_category->fetchAll_join('*' , " order by sort DESC ");
+	$ary_mainCategoryMenu = array();
 
 	foreach($ary_categoryMenu as $value){
 		if($value['data_pkey'] == 0){

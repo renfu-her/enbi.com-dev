@@ -45,12 +45,21 @@ putenv("TZ=Asia/Taipei");//設定時區
 ini_set('date.timezone','Asia/Taipei');  
 $Day = date("Y-m-d");//今天日期
 
-/* MySQL設定 */
-define('DB_NAME','enbi');
-define('DB_USER','enbi');
-define('DB_PASSWD','jYr7uSVJQYsb56VeGoix');
-define('DB_HOST','172.234.84.47');
-define('DB_TYPE','mysql');
+/* MySQL設定：優先沿用已載入的 config.php $conn_*，否則讀本機 db.local.php */
+if (!defined('DB_HOST')) {
+	if (isset($conn_host, $conn_db, $conn_user)) {
+		define('DB_HOST', $conn_host);
+		define('DB_NAME', $conn_db);
+		define('DB_USER', $conn_user);
+		define('DB_PASSWD', isset($conn_pass) ? $conn_pass : '');
+		define('DB_TYPE', 'mysql');
+	} elseif (is_file(__DIR__ . '/db.local.php')) {
+		require __DIR__ . '/db.local.php';
+	} else {
+		header("Content-Type:text/html; charset=utf-8");
+		die('<p>缺少資料庫設定。請先載入 config.php，或複製 admin1561318/db.local.example.php 為 db.local.php。</p>');
+	}
+}
 
 
 try {

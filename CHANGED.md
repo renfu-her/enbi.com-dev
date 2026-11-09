@@ -1,5 +1,17 @@
 # CHANGED
 
+## 2026-11-09 14:40:50 CST (Asia/Taipei)
+
+Live DB smoke after local MySQL came up.
+
+- `admin1561318/common.func.php`: PDO credentials follow `config.php` `$conn_*` or gitignored `db.local.php` (removed hardcoded remote secrets from the tracked file).
+- Front pages that need PDO (`index`, `unboxing`, `unboxing-content`, `test`) load `config.php` before `common.func.php`.
+- `include/nav.php`: init menu active classes; `storelist.php` and admin index undefined-key guards.
+- Added `scripts/db-smoke.php` and `scripts/page-smoke.php`; `admin1561318/db.local.example.php`.
+- Enabled local PHP 8.5 `pdo_mysql` extension for CLI smoke.
+
+Verified: `SMOKE_DB=PASS`, `SMOKE_PAGES=PASS` (index/news/products/stores/unboxing/admin login shell).
+
 ## 2026-11-09 14:14:22 CST (Asia/Taipei)
 
 Stop tracking local secrets in git.

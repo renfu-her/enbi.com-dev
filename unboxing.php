@@ -1,4 +1,5 @@
 <?php 	require_once 'config.php';
+include "./admin1561318/common.func.php";
 
 	$pageNow = (isset($_GET['p']) and $_GET['p'] != '') ? intval($_GET['p']) : 1;
 
@@ -13,8 +14,6 @@
 
 ?>
 <?php
-
-include "./admin1561318/common.func.php";
 ##$pageNow = (isset($_GET['p']) and $_GET['p'] != '') ? intval($_GET['p']) : 1;
 ?>
 <!DOCTYPE html>

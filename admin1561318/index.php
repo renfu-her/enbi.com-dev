@@ -3,8 +3,9 @@ require_once '../config.php';
 
 
 
-$url_explode = explode("&",$_SERVER['QUERY_STRING']);
-unset($_SESSION['redirectPageUrl']);
+$queryString = isset($_SERVER['QUERY_STRING']) ? $_SERVER['QUERY_STRING'] : '';
+$url_explode = explode("&", $queryString);
+$_SESSION['redirectPageUrl'] = '';
 if(is_array($url_explode)){
   foreach($url_explode as $keyurl => $valueurl){
     if(strstr($url_explode[$keyurl],"msg") == false and $url_explode[$keyurl] != '' and strstr($url_explode[$keyurl],"ooooo") == false){

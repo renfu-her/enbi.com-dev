@@ -5,6 +5,9 @@
 		exit;
 	}
 
+	$ary_menuActive1 = array('1' => '', '2' => '', '3' => '');
+	$ary_menuActive2 = array('1' => '', '2' => '', '3' => '');
+	$ary_menuActive3 = array('1' => '', '2' => '', '3' => '');
 	$ary_menuActive1['1'] = 'active';
 	$ary_menuActive2['2'] = 'active';
 	$ary_menuActive3['3'] = 'active';

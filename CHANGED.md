@@ -1,5 +1,11 @@
 # CHANGED
 
+## 2026-11-09 15:31:02 CST (Asia/Taipei)
+
+Production PHP 8.4 500 root cause: restored `config.php` still used unquoted `defined(ROOT|libs|icld)`, which is Error on PHP 8+.
+
+- Add `scripts/patch-config-php84.php` to quote those constants and guard `$_GET['debug']` without changing DB/mail secrets.
+
 ## 2026-11-09 14:40:50 CST (Asia/Taipei)
 
 Live DB smoke after local MySQL came up.

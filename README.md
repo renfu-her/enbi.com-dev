@@ -1,6 +1,6 @@
 # enbi
 
-Updated: 2026-11-09 12:27:31 CST (Asia/Taipei)
+Updated: 2026-11-09 12:31:46 CST (Asia/Taipei)
 
 Classic PHP storefront and admin (`admin1561318`) targeting PHP 8.4 / 8.5 (formerly 7.1).
 

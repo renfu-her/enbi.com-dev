@@ -1,6 +1,6 @@
 <?php 	require_once 'config.php';
 
-	if(!$ary_get['s']){
+	if(empty($ary_get['s'])){
 		header("Location:./products.php");
 		exit;
 	}

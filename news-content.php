@@ -1,6 +1,6 @@
 <?php 	require_once 'config.php';
 
-	if(!$ary_get['p']){
+	if(empty($ary_get['p'])){
 		header("Location:./news.php");
 		exit;
 	}

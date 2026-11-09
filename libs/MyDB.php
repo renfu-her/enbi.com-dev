@@ -32,15 +32,31 @@ class MyDB{
 
 	function __construct($host , $db , $user , $pass , $charset = 'utf8'){
 
-		$this->mysqli = new mysqli($host , $user , $pass, $db);
-		if ($this->mysqli instanceof mysqli && !$this->mysqli->connect_errno && $charset !== '') {
-			$this->mysqli->set_charset($charset);
+		$this->mysqli = null;
+		$this->result = null;
+		$driver = new mysqli_driver();
+		$prior = $driver->report_mode;
+		$driver->report_mode = MYSQLI_REPORT_OFF;
+		try {
+			$this->mysqli = @new mysqli($host , $user , $pass, $db);
+			if ($this->mysqli instanceof mysqli && $this->mysqli->connect_errno) {
+				$this->mysqli = null;
+			} elseif ($this->mysqli instanceof mysqli && $charset !== '') {
+				$this->mysqli->set_charset($charset);
+			}
+		} catch (Throwable $e) {
+			$this->mysqli = null;
 		}
+		$driver->report_mode = $prior;
 
 	}
 
 	function SqlQuery($sql){
 
+		if (!($this->mysqli instanceof mysqli)) {
+			$this->result = false;
+			return false;
+		}
 		$this->result = $this->mysqli->query($sql);
 
 		return $this->result;
@@ -49,24 +65,36 @@ class MyDB{
 
 	function FetchObj($sql){//in fact, type of $sql is 'resource'
 
+		if (!($sql instanceof mysqli_result)) {
+			return null;
+		}
 		return mysqli_fetch_object($sql);
 
 	}
 
 	function FetchAry($sql){
 
+		if (!($this->result instanceof mysqli_result)) {
+			return null;
+		}
 		return $this->result->fetch_array(MYSQLI_ASSOC);
 	}
 
 
 	function NumRows($query){
 
+		if (!($query instanceof mysqli_result)) {
+			return 0;
+		}
 		return mysqli_num_rows($query);
 	}
 
 
 	function NumFields($query){
 
+		if (!($query instanceof mysqli_result)) {
+			return 0;
+		}
 		return mysqli_num_fields($query);
 
 	}
@@ -74,6 +102,9 @@ class MyDB{
 
 	function FieldName($query , $int){
 
+		if (!($query instanceof mysqli_result)) {
+			return null;
+		}
 		$field = mysqli_fetch_field_direct($query , $int);
 		return ($field && isset($field->name)) ? $field->name : null;
 
@@ -82,6 +113,9 @@ class MyDB{
 
 	function DataSeek($query , $int){
 
+		if (!($query instanceof mysqli_result)) {
+			return false;
+		}
 		return mysqli_data_seek($query , $int);
 
 	}
@@ -89,6 +123,16 @@ class MyDB{
 
 	function Safe($content){
 
+		if (!($this->mysqli instanceof mysqli)) {
+			if (is_array($content)) {
+				foreach ($content as $key=>$value) {
+					$content[$key] = addslashes((string) $value);
+				}
+			} else {
+				$content = addslashes((string) $content);
+			}
+			return $content;
+		}
 		if (is_array($content)) {
 			foreach ($content as $key=>$value) {
 				$content[$key] = mysqli_real_escape_string($this->mysqli, (string) $value);
@@ -103,6 +147,9 @@ class MyDB{
 
 	function InsertId(){
 
+		if (!($this->mysqli instanceof mysqli)) {
+			return 0;
+		}
 		return mysqli_insert_id($this->mysqli);
 
 	}

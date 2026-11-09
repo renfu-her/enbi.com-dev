@@ -1,6 +1,6 @@
 <?php 	require_once 'config.php';
 
-	if(!$ary_get['p']){
+	if(empty($ary_get['p'])){
 		header("Location:./products.php");
 		exit;
 	}
@@ -14,6 +14,8 @@
 
 
 	$ary_category = $obj_category -> fetchAll_join('*' , " order by sort DESC ");
+	$ary_mainCategory = array();
+	$categoryOpenPkey = null;
 
 	foreach($ary_category as $value){
 		$ary_categoryRe[$value['pkey']] = $value;
@@ -25,8 +27,8 @@
 		}
 	}
 
-	if(!$categoryOpenPkey){
-		$categoryOpenPkey = $ary_mainCategory['0']['pkey'];
+	if(empty($categoryOpenPkey) && !empty($ary_mainCategory[0]['pkey'])){
+		$categoryOpenPkey = $ary_mainCategory[0]['pkey'];
 	}
 	$categoryItemActive = $ary_data['data_pkey'];
 

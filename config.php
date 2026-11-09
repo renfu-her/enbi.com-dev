@@ -77,6 +77,12 @@ $ary_config['ckeditorUploadUrl'] = '/uploads/';
 
 $ary_post = safe($_REQUEST);
 $ary_get = safe($_GET);
+if (!is_array($ary_post)) {
+	$ary_post = array();
+}
+if (!is_array($ary_get)) {
+	$ary_get = array();
+}
 
 
 

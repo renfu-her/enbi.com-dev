@@ -7,6 +7,15 @@ if(empty($_SESSION['AdminLogin'])){			//登入檢查，include後記得去掉註
 	exit;
 }
 
+if (!isset($ary_get['proc'])) { $ary_get['proc'] = ''; }
+if (!isset($ary_get['ct'])) { $ary_get['ct'] = ''; }
+if (!isset($ary_get['pk'])) { $ary_get['pk'] = ''; }
+if (!isset($ary_get['data'])) { $ary_get['data'] = ''; }
+if (!isset($ary_post['self_post'])) { $ary_post['self_post'] = ''; }
+if (!isset($ary_post['ct'])) { $ary_post['ct'] = ''; }
+if (!isset($_SESSION['redirectPageUrl'])) { $_SESSION['redirectPageUrl'] = ''; }
+if (!isset($_SESSION['AdminPkey'])) { $_SESSION['AdminPkey'] = ''; }
+
 
 
 

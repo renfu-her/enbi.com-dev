@@ -5,6 +5,9 @@ require_once 'config.php';
 
 	$ary_banner = $obj_banner->fetchAll_join('*' , " order by sort DESC ");
 	$dotCount = 0;
+	$htmlBanner = '';
+	$htmlBannerDot = '';
+	$htmlAD = '';
 	foreach($ary_banner as $key => $value){
 		if($value['type'] == '1'){
 			// $htmlBanner .= '<a class="item" href="'.$value['url'].'" target="_blank"><img src="uploads/'.$value['pic'].'" class="img-responsive" /></a>';

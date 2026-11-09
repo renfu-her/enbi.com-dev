@@ -1,5 +1,16 @@
 # CHANGED
 
+## 2026-11-09 12:31:46 CST (Asia/Taipei)
+
+Continue PHP 8.5 hardening (isset sweep + MyDB resilience).
+
+- `libs/MyDB.php`: tolerate connect failure; guard `NumRows`/`Fetch*`/`DataSeek` when query is not `mysqli_result`.
+- Front pages: `empty()` / isset for `$ary_get` keys (`search`, `news-content`, `products`, `products-content`, `unboxing-content`); init banner HTML vars in `index.php`.
+- `config.php`: ensure `$ary_get` / `$ary_post` are arrays.
+- `admin1561318/proc.php` and `delete_proc.php`: default missing `proc`/`ct`/`pk` before switch.
+
+Verified: `include config.php` on PHP 8.5.12 returns `CONFIG_OK` with unreachable DB (empty result sets, no fatal).
+
 ## 2026-11-09 12:27:31 CST (Asia/Taipei)
 
 Follow-up from front/admin/libs PHP 8.5 inventory agents.

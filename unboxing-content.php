@@ -18,7 +18,7 @@ include "./admin1561318/common.func.php";
 ##$pageNow = (isset($_GET['p']) and $_GET['p'] != '') ? intval($_GET['p']) : 1;
 ?>
 <?PHP
-$edit_no	=	$_GET['no'];
+$edit_no	=	isset($_GET['no']) ? $_GET['no'] : '';
 
 
 $sql_main="SELECT * 

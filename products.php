@@ -2,10 +2,13 @@
 
 
 	$ary_category = $obj_category->fetchAll_join('*' , " order by sort DESC ");
+	$categoryGet = isset($ary_get['c']) ? $ary_get['c'] : '';
+	$ary_mainCategory = array();
+	$categoryOpenPkey = null;
 
 	foreach($ary_category as $value){
 		$ary_categoryRe[$value['pkey']] = $value;
-		if($ary_get['c'] == $value['pkey']){
+		if($categoryGet !== '' && $categoryGet == $value['pkey']){
 			$categoryOpenPkey = $value['data_pkey'];
 		}
 		if($value['data_pkey'] == 0){
@@ -13,18 +16,19 @@
 		}
 	}
 
-	if(!$categoryOpenPkey){
-		$categoryOpenPkey = $ary_mainCategory['0']['pkey'];
+	if(empty($categoryOpenPkey) && !empty($ary_mainCategory[0]['pkey'])){
+		$categoryOpenPkey = $ary_mainCategory[0]['pkey'];
 	}
-	if(!$ary_get['c']){
+	if($categoryGet === ''){
+		$ary_mainCategoryItem = array();
 		foreach($ary_category as $value){
-			if($value['data_pkey'] == $ary_mainCategory['0']['pkey']){
+			if(!empty($ary_mainCategory[0]['pkey']) && $value['data_pkey'] == $ary_mainCategory[0]['pkey']){
 				$ary_mainCategoryItem[] = $value;
 			}
 		}
-		$categoryItemActive = $ary_mainCategoryItem['0']['pkey'];
+		$categoryItemActive = !empty($ary_mainCategoryItem[0]['pkey']) ? $ary_mainCategoryItem[0]['pkey'] : '';
 	}else{
-		$categoryItemActive = $ary_get['c'];
+		$categoryItemActive = $categoryGet;
 	}
 
 

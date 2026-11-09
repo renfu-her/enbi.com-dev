@@ -7,6 +7,9 @@ if(empty($_SESSION['AdminLogin'])){			//登入檢查，include後記得去掉註
 	exit;
 }
 
+if (!isset($ary_get['ct'])) { $ary_get['ct'] = ''; }
+if (!isset($ary_get['pk'])) { $ary_get['pk'] = ''; }
+
 
 
 

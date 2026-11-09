@@ -1,5 +1,13 @@
 # CHANGED
 
+## 2026-11-09 14:14:22 CST (Asia/Taipei)
+
+Stop tracking local secrets in git.
+
+- Add `config.php` to `.gitignore` and remove it from the index (`git rm --cached`).
+- Add `config.example.php` as the shareable template (no real credentials).
+- Local `config.php` stays on disk for runtime; it is not pushed.
+
 ## 2026-11-09 12:31:46 CST (Asia/Taipei)
 
 Continue PHP 8.5 hardening (isset sweep + MyDB resilience).

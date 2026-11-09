@@ -8,7 +8,7 @@ if($_POST){
     exit;
 }
 
-function strip_magic_slashes($str) {    return get_magic_quotes_gpc() ? stripslashes($str) : $str; }
+function strip_magic_slashes($str) {    return $str; }
 
 ?>
 <!DOCTYPE html>

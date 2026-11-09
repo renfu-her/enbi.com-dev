@@ -15,7 +15,7 @@ class SplitPage {
    var $endPage;
    var $viewlist;
 
-   function SplitPage($page, $total_records, $records_per_page, $listPage) { //物件建構
+   function __construct($page, $total_records, $records_per_page, $listPage) { //物件建構
      $this->records_per_page = $records_per_page;
      $this->page                      = $page;
      $this->total_records         = $total_records;

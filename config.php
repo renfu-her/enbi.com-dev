@@ -1,18 +1,21 @@
 <?php
 session_start();
 ini_set('display_errors', 0);
-if($_GET['debug'] == 'cldd'){
+if (isset($_GET['debug']) && $_GET['debug'] == 'cldd') {
 	ini_set('display_errors', 1);
 	error_reporting(E_ALL ^ E_NOTICE);
 }
-if(!defined(ROOT))		
-	define('ROOT',dirname(__FILE__).'/');
+if (!defined('ROOT')) {
+	define('ROOT', dirname(__FILE__) . '/');
+}
 
-if(!defined(libs))        
-	define('libs',dirname(__FILE__).'/libs/');
+if (!defined('libs')) {
+	define('libs', dirname(__FILE__) . '/libs/');
+}
 
-if(!defined(icld))        
-	define('icld',dirname(__FILE__).'/include/');
+if (!defined('icld')) {
+	define('icld', dirname(__FILE__) . '/include/');
+}
 
 	
 include_once libs.'MyDB.php';

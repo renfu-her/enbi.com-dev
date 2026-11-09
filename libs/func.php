@@ -10,15 +10,12 @@ require(libs.'PHPMailerV2/Exception.php');
 
 	function safe($content){  
     
-		if (!get_magic_quotes_gpc()) {
-			if (is_array($content)) {
-				foreach ($content as $key=>$value) {
-					$content[$key] = addslashes(trim($value));
-				}
-			}else{
-				$content = addslashes(trim($content));
+		if (is_array($content)) {
+			foreach ($content as $key=>$value) {
+				$content[$key] = addslashes(trim((string) $value));
 			}
 		}else{
+			$content = addslashes(trim((string) $content));
 		}
 		return $content;	
 	
@@ -111,7 +108,10 @@ require(libs.'PHPMailerV2/Exception.php');
 	
 	
 
-	function send_mail( $subject = 'No subject', $body , $to='' , $cc='', $bcc='' ) {
+	function send_mail( $subject, $body , $to='' , $cc='', $bcc='' ) {
+		if ($subject === null || $subject === '') {
+			$subject = 'No subject';
+		}
 		//global $mailname_from, $mail_from;
 
 		$mail= new PHPMailer\PHPMailer\PHPMailer();
@@ -349,7 +349,7 @@ require(libs.'PHPMailerV2/Exception.php');
 	
 	
 	function strip_magic_slashes($str) {    
-		return get_magic_quotes_gpc() ? stripslashes($str) : $str; 
+		return $str; 
 	}
 
 

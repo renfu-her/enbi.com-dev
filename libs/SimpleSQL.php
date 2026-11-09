@@ -37,7 +37,7 @@ class SimpleSQL {
   var $str = '';
   
   
-  function SimpleSQL ($db , $tableName = '') {
+  function __construct ($db , $tableName = '') {
     
     $this->db = $db;
     $this->tableName = $tableName;
